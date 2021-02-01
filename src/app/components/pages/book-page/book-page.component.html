@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="book">
+    <h1>{{ book.title }}</h1>
+    <div class="list">
+      <h2>Auteurs</h2>
+      <div *ngFor="let a of book.authors">{{a.first_name}}, {{a.last_name}} | {{a.authorBirth}} - {{a.authorDeath}}</div>
+    </div>
+    <div class="list">
+      <h2>Sujets</h2>
+      <div *ngFor="let s of book.subjects">{{ s }}</div>
+    </div>
+    <div class="list">
+      <h2>Shelves</h2>
+      <div *ngFor="let s of book.bookShelves">{{ s }}</div>
+    </div>
+    <div>
+      <p>type de média : {{ book.mediaType }}</p>
+    </div>
+    <div>
+      <a [href]="book.downloadLink">Lien de téléchargement</a>
+    </div>
+    <div>
+      <p>téléchargé : {{ book.downloadCount }} fois</p>
+    </div>
+
+  </div>
+  <div class="book-list">
+    <h3>Suggestions</h3>
+    <app-card-list
+      [books]="suggestions$.asObservable()"
+    ></app-card-list>
+  </div>
+</div>

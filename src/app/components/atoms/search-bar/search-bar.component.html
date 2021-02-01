@@ -1,0 +1,32 @@
+<form class="search-bar-container">
+  <mat-form-field>
+    <mat-label>Votre Recherche</mat-label>
+    <input #input type="text"
+           placeholder="Tapez votre recherche"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOption$ | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <button (click)="doSearch($event, input)" mat-raised-button color="primary">
+    Rechercher
+  </button>
+  <mat-checkbox class="example-margin" [(ngModel)]="isRegex" [ngModelOptions]="{standalone: true}">Regex</mat-checkbox>
+</form>
+
+<!-- ========================================== Templates =========================== -->
+<ng-template #enabled>
+  <button (click)="doSearch($event, input)" mat-raised-button color="primary">
+    Rechercher
+  </button>
+</ng-template>
+
+<ng-template #disabled>
+  <button mat-raised-button disabled>
+    Rechercher
+  </button>
+</ng-template>

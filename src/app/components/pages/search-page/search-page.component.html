@@ -1,0 +1,22 @@
+<div class="search">
+  <app-search-bar
+    [search-channel]="searchChannel$"
+    [filter-channel]="filterChannel$.asObservable()"
+    [result-channel]="resultChangeChannel$.asObservable()"
+  ></app-search-bar>
+</div>
+<div class="books-lists">
+  <div class="book-list">
+    <h1>Résultats de recherche</h1>
+    <app-card-list
+      [books]="resultChannel$.asObservable()"
+    ></app-card-list>
+  </div>
+  <div class="book-list">
+    <h1>Suggestions</h1>
+    <app-card-list
+      [books]="suggestionsChannel$.asObservable()"
+    ></app-card-list>
+  </div>
+
+</div>

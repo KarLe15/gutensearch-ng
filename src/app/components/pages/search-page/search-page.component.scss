@@ -1,0 +1,16 @@
+.search {
+  height: 75px;
+  width: 100%;
+}
+.books-lists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .book-list {
+    padding: 5px;
+    border: black 3px solid;
+    border-radius: 4px;
+    width: 40%;
+  }
+}

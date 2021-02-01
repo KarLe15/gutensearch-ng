@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.book {
+  width: 40%;
+  .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.book-list {
+  padding: 5px;
+  border: black 3px solid;
+  border-radius: 4px;
+  width: 40%;
+}
