@@ -155,10 +155,7 @@ export class BackendCommunicationService {
 
   public getBookDetails(req: BookRequest): Observable<BookResponse> {
     return this.http.request<BookResponse>(
-      'GET', `${this.baseURL}/v1/api/book`,
-      {
-        body: req
-      }
+      'GET', `${this.baseURL}/v1/api/book?id=${req.id}`
     );
     // const res: BookResponse = {
     //   book:  {
